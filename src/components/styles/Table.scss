@@ -1,0 +1,79 @@
+@mixin row-config {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin content-config {
+  text-align: left;
+  width: 33%;
+  padding-left: 2%;
+}
+
+@mixin mobile {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}
+
+.table {
+  width: 80%;
+  margin: 0 auto 4% auto;
+
+  .table-header {
+    @include row-config;
+
+    background-color: #d45f48;
+    color: #ffffff;
+    font-weight: bold;
+
+    @include mobile {
+      height: 8px;
+    }
+
+    .table-header__title {
+      @include content-config;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  .table-row {
+    @include row-config;
+
+    background-color: #ffffff;
+
+    @include mobile {
+      flex-direction: column;
+      height: 200px;
+    }
+
+    .table-row__content {
+      @include content-config;
+      font-size: 18px;
+
+      @include mobile {
+        width: 100%;
+        padding-left: 12%;
+      }
+
+      .mobile-title {
+        display: none;
+
+        @include mobile {
+          display: block;
+          text-transform: uppercase;
+          color: #525252;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .table-row:nth-child(even) {
+    background-color: #e3e3e3;
+  }
+}

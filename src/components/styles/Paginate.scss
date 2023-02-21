@@ -1,0 +1,26 @@
+.pagination {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  button {
+    height: 40px;
+    width: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ffffff;
+    border: 1px solid #d7d7d7;
+
+    img {
+      height: 15px;
+    }
+  }
+  .page__selected {
+    background: #d45f48;
+    color: #ffffff;
+  }
+}
